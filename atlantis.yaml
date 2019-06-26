@@ -17,5 +17,5 @@ workflows:
         - init
         - run: >
             PATH=/home/atlantis/.atlantis/bin:$PATH
-            terraform${ATLANTIS_TERRAFORM_VERSION} plan -input=false -no-color
+            terraform plan -input=false -no-color
             -out ${PLANFILE}
