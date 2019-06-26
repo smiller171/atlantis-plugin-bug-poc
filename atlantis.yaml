@@ -1,6 +1,9 @@
 version: 3
 projects:
   - name: example
-    terraform_version: v0.12.3
+    terraform_version: v0.12.1
+    dir: "."
     autoplan:
+      when_modified:
+        - "**"
       enabled: true

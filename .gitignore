@@ -9,3 +9,5 @@
 *.tfvars
 
 atlantis
+atlantis-config.yml
+atlantis-repo-config.yml
