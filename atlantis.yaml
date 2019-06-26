@@ -17,6 +17,5 @@ workflows:
         - init
         - run: terraform workspace new -no-color test
         - run: >
-            PATH=/home/atlantis/.atlantis/bin:$PATH
             terraform plan -input=false -no-color
             -out ${PLANFILE}
