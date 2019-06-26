@@ -7,15 +7,15 @@ projects:
       when_modified:
         - "**"
       enabled: true
-    workflow: example
+    # workflow: example
 
-workflows:
-  example:
-    plan:
-      steps:
-        - run: rm -rf .terraform
-        - init
-        - run: terraform workspace new -no-color test
-        - run: >
-            terraform plan -input=false -no-color
-            -out ${PLANFILE}
+# workflows:
+#   example:
+#     plan:
+#       steps:
+#         - run: rm -rf .terraform
+#         - init
+#         - run: terraform workspace new -no-color test
+#         - run: >
+#             terraform plan -input=false -no-color
+#             -out ${PLANFILE}
