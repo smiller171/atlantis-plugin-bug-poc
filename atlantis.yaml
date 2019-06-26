@@ -4,4 +4,17 @@ projects:
     terraform_version: v0.12.3
     dir: "."
     autoplan:
+      when_modified:
+        - "**"
       enabled: true
+    workflow: example
+
+workflows:
+  example:
+    plan:
+      steps:
+        - run: rm -rf .terraform
+        - init
+        - run: >
+            terraform${ATLANTIS_TERRAFORM_VERSION} plan -input=false -no-color
+            -out ${PLANFILE}
