@@ -15,6 +15,7 @@ workflows:
       steps:
         - run: rm -rf .terraform
         - init
+        - run: terraform workspace new -no-color test
         - run: >
             PATH=/home/atlantis/.atlantis/bin:$PATH
             terraform plan -input=false -no-color
